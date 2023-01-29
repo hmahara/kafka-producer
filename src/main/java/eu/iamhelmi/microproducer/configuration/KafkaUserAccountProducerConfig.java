@@ -21,11 +21,29 @@ public class KafkaUserAccountProducerConfig {
     @Value(value = "${kafka.topic.useraccount-create.name}")
     private String userAccountCreateTopicName;
     
+    @Value(value = "${kafka.topic.useraccount-create.number-of-partition}")
+    private int userAccountCreateNumberOfPartition;
+    
+    @Value(value = "${kafka.topic.useraccount-create.replication-factor}")
+    private int userAccountCreateReplicationFactor;
+    
     @Value(value = "${kafka.topic.useraccount-update.name}")
     private String userAccountUpdateTopicName;
     
+    @Value(value = "${kafka.topic.useraccount-update.number-of-partition}")
+    private int userAccountUpdateNumberOfPartition;
+    
+    @Value(value = "${kafka.topic.useraccount-update.replication-factor}")
+    private int userAccountUpdateReplicationFactor;
+    
     @Value(value = "${kafka.topic.useraccount-delete.name}")
     private String userAccountDeleteTopicName;
+    
+    @Value(value = "${kafka.topic.useraccount-delete.number-of-partition}")
+    private int userAccountDeleteNumberOfPartition;
+    
+    @Value(value = "${kafka.topic.useraccount-delete.replication-factor}")
+    private int userAccountDeleteReplicationFactor;
 
 
     @Bean
@@ -37,17 +55,17 @@ public class KafkaUserAccountProducerConfig {
 
     @Bean
     public NewTopic userAccountCreateTopic() {
-        return new NewTopic(userAccountCreateTopicName, 2, (short) 2);
+        return new NewTopic(userAccountCreateTopicName, userAccountCreateNumberOfPartition, (short) userAccountCreateReplicationFactor);
     }
     
     @Bean
     public NewTopic userAccountUpdateTopic() {
-        return new NewTopic(userAccountUpdateTopicName, 2, (short) 2);
+        return new NewTopic(userAccountUpdateTopicName, userAccountUpdateNumberOfPartition, (short) userAccountUpdateReplicationFactor);
     }
     
     @Bean
     public NewTopic userAccountDeleteTopic() {
-        return new NewTopic(userAccountDeleteTopicName, 2, (short) 2);
+        return new NewTopic(userAccountDeleteTopicName, userAccountDeleteNumberOfPartition, (short) userAccountDeleteReplicationFactor);
     }
 
 

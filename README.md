@@ -8,6 +8,7 @@ This is a simple example to create a message and send to kafka topic.
 * Build the jar file and put in any folder
 * Copy the application.properties from src/main/resource to the same folder as the jar file
 * Adjust the port, values, etc in the application.properties as you need
+* Run your kafka
 
 
 ## Test to generate message through REST calls
