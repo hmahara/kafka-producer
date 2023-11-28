@@ -16,7 +16,7 @@ import org.springframework.kafka.core.KafkaAdmin;
 public class KafkaUserAccountProducerConfig {
 
     //@Value(value = "${spring.kafka.producer.bootstrap-servers}")
-    @Value(value = "${spring.kafka.bootstrap-servers }")
+    @Value(value = "${spring.kafka.bootstrap-servers}")
     private String bootstrapAddress;
 
     @Value(value = "${kafka.topic.useraccount-create.name}")
