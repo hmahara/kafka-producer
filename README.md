@@ -13,4 +13,4 @@ This is a simple example to create a message and send to kafka topic.
 
 ## Test to generate message through REST calls
 
-* curl -X POST http://localhost:8760/add-user -H "Content-Type: application/json" -d '{"userAccountUUID":"1111-2222-3333", "login": "create-aaa", "pin": "1111", "password": "xxx", "organizationUID":"aaaa-bbbb-cccc"}'
+* curl -X POST http://localhost:8760/api/v1/user/addcurl -X POST http://localhost:8760/api/v1/user/add -H "Content-Type: application/json" -d '{"userAccountUUID":"1111-2222-3333", "login": "aaa", "pin": "1111", "password": "xxx", "role": "manager", "organizationUUID":"acda-bbbb-cccc"}' -H "Content-Type: application/json" -d '{"userAccountUUID":"1111-2222-3333", "login": "create-aaa", "pin": "1111", "password": "xxx", "organizationUID":"aaaa-bbbb-cccc"}'

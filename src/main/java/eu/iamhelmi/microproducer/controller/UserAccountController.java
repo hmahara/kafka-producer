@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/test")
+@RequestMapping("/api/v1/user")
 public class UserAccountController {
 	private ObjectMapper objectMapper;
 	
@@ -26,7 +26,7 @@ public class UserAccountController {
 	@Autowired
 	ElasticSearchMessageService searchEngineService;
 
-	@PostMapping("/add-user")
+	@PostMapping("/add")
 	public String addUserAccount(@RequestBody UserAccount userAccount) {
 		log.info("Adding user account");
 		objectMapper = new ObjectMapper();
@@ -41,7 +41,7 @@ public class UserAccountController {
 
 	}
 	
-	@PostMapping("/update-user")
+	@PostMapping("/update")
 	public String updateUserAccount(@RequestBody UserAccount userAccount) {
 		log.info("Updating user account");
 		objectMapper = new ObjectMapper();
@@ -55,7 +55,7 @@ public class UserAccountController {
 
 	}
 	
-	@PostMapping("/delete-user")
+	@PostMapping("/delete")
 	public String deleteUserAccount(@RequestBody UserAccount userAccount) {
 		log.info("Updating user account");
 		objectMapper = new ObjectMapper();
